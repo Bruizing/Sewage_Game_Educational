@@ -215,7 +215,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 300
   jumpForce: 6
+  XVel: 0
+  YVel: 0
   rb: {fileID: 3111630967809256095}
+  anim: {fileID: 1884541802414086674}
   layerMask:
     serializedVersion: 2
     m_Bits: 8
