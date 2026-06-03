@@ -53,9 +53,19 @@ public class InputProvider : MonoBehaviour
         {
             anim.SetInteger("XDir", XInt);
         }
+        else if(XInt == 0)
+        {
+            anim.SetInteger("XDir", 0);
+        }
+
         if(YInt < 0)
         {
             anim.SetInteger("YDir", YInt);
+        
+        }
+        else if(YInt >= 0)
+        {
+            anim.SetInteger("YDir", 0);
         }
     }
 
