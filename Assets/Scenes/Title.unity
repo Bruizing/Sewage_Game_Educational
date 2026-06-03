@@ -1371,7 +1371,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: THE SEWAGE HEROS
+  m_text: THE SEWAGE SQUAD
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 86eb2d5c3b5c7fb4c8ee9ddfc316e037, type: 2}
   m_sharedMaterial: {fileID: 9150550028159899052, guid: 86eb2d5c3b5c7fb4c8ee9ddfc316e037, type: 2}
@@ -1784,7 +1784,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: THE SEWAGE HEROS
+  m_text: THE SEWAGE SQUAD
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 86eb2d5c3b5c7fb4c8ee9ddfc316e037, type: 2}
   m_sharedMaterial: {fileID: 9150550028159899052, guid: 86eb2d5c3b5c7fb4c8ee9ddfc316e037, type: 2}
