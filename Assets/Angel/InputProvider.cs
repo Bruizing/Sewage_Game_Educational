@@ -3,26 +3,35 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Animator))]
 public class InputProvider : MonoBehaviour
 {
     ActionSystem inputActions;
-    private float direction = 0f;
+
+    private float DirX = 0f;
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
-    
-    Rigidbody2D rb;
 
+    [SerializeField] private float XVel;
+    [SerializeField] private float YVel;
+
+    [Header("Player Components References")]
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Animator anim;
+
+    [Header("Ground Check")]
+    [SerializeField] LayerMask layerMask;
+    [SerializeField] Transform groundCheck;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
         inputActions = new ActionSystem();
         inputActions.Enable();
 
         inputActions.Player.Movement.performed += ctx =>
         {
-            direction = ctx.ReadValue<float>();
-            rb.velocity = new Vector2(direction * speed * Time.deltaTime, rb.velocity.y);
+            DirX = ctx.ReadValue<float>();
         };
 
         inputActions.Player.Jump.performed += ctx => Jump();
@@ -30,12 +39,39 @@ public class InputProvider : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(direction * speed * Time.deltaTime, rb.velocity.y);
+        rb.velocity = new Vector2(DirX * speed * Time.deltaTime, rb.velocity.y);
+        XVel = rb.velocity.x;
+        YVel = rb.velocity.y;
+        int XInt = Mathf.RoundToInt(XVel);
+        int YInt = Mathf.RoundToInt(YVel)   ;
+
+        if(XInt < 0)
+        {
+            anim.SetInteger("XDir", XInt);
+        }
+        else if(DirX > 0)
+        {
+            anim.SetInteger("XDir", XInt);
+        }
+        else if(XInt == 0)
+        {
+            anim.SetInteger("XDir", 0);
+        }
+
+        if(YInt < 0)
+        {
+            anim.SetInteger("YDir", YInt);
+        
+        }
+        else if(YInt >= 0)
+        {
+            anim.SetInteger("YDir", 0);
+        }
     }
 
     void Jump()
     {
-       if(isGrounded())
+    if(inputActions.Player.Jump.triggered && isGrounded())
        {
            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
        }
@@ -43,7 +79,7 @@ public class InputProvider : MonoBehaviour
 
     bool isGrounded()
     {
-            return Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
+            return Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.4f, 0.1f), CapsuleDirection2D.Horizontal, 0, layerMask);
     }
 
     private void OnEnable()
