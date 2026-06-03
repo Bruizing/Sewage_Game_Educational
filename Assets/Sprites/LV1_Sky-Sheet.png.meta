@@ -39,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 0
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95ef2a8344128f442ad83c489f3a3b4e
-      internalID: -474125350
+      spriteID: 6791828e031cab343be599d5f91f3efc
+      internalID: -515824354
       vertices: []
       indices: 
       edges: []
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e9a629ca3fa1654aa92976649187c2c
-      internalID: 2125602009
+      spriteID: a87124c0b48b7d948b1ff0d2723d9eca
+      internalID: 484345486
       vertices: []
       indices: 
       edges: []
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 882b959969e06b54f9ecad9d3ab6b82d
-      internalID: -1713495418
+      spriteID: 5f19d71b64e6b7a46a2016f7a30fb5eb
+      internalID: -190924749
       vertices: []
       indices: 
       edges: []
@@ -196,9 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      LV1_Sky-Sheet_0: -474125350
-      LV1_Sky-Sheet_1: 2125602009
-      LV1_Sky-Sheet_2: -1713495418
+      LV1_Sky-Sheet_0: -515824354
+      LV1_Sky-Sheet_1: 484345486
+      LV1_Sky-Sheet_2: -190924749
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
