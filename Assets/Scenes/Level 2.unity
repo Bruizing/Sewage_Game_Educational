@@ -388,8 +388,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1812506070454891674, guid: 675a5ca80ed3ed841987825655f82976, type: 3}
       propertyPath: sceneToLoad
-      value: 
-      objectReference: {fileID: 102900000, guid: 85ea2a62ce0154a11ad617789701770a, type: 3}
+      value: Level 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1970770451869913261, guid: 675a5ca80ed3ed841987825655f82976, type: 3}
       propertyPath: m_LocalPosition.x
       value: 123.5

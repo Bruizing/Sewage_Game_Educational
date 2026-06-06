@@ -11057,6 +11057,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneChangeObject
       objectReference: {fileID: 0}
+    - target: {fileID: 1812506070454891674, guid: 675a5ca80ed3ed841987825655f82976, type: 3}
+      propertyPath: sceneToLoad
+      value: Level 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1970770451869913261, guid: 675a5ca80ed3ed841987825655f82976, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.449993
