@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
+
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
@@ -43,13 +43,14 @@ public class InputProvider : MonoBehaviour
         XVel = rb.velocity.x;
         YVel = rb.velocity.y;
         int XInt = Mathf.RoundToInt(XVel);
-        int YInt = Mathf.RoundToInt(YVel)   ;
-
+        float YFloat = YVel;
+        
+        #region XDir Animation Parameters
         if(XInt < 0)
         {
             anim.SetInteger("XDir", XInt);
         }
-        else if(DirX > 0)
+        else if(XInt > 0)
         {
             anim.SetInteger("XDir", XInt);
         }
@@ -57,16 +58,20 @@ public class InputProvider : MonoBehaviour
         {
             anim.SetInteger("XDir", 0);
         }
+        #endregion
 
-        if(YInt < 0)
+        #region YDir Animation Parameters
+        if(YFloat > 0f )
         {
-            anim.SetInteger("YDir", YInt);
-        
+            int Yint = Mathf.RoundToInt(YFloat);
+            anim.SetInteger("YDir", Yint);
         }
-        else if(YInt >= 0)
+        else if(YFloat == (jumpForce * 2f) - jumpForce)
         {
             anim.SetInteger("YDir", 0);
         }
+        #endregion
+        
     }
 
     void Jump()
