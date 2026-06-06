@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 300
-  jumpForce: 6
+  jumpForce: 10
   XVel: 0
   YVel: 0
   rb: {fileID: 3111630967809256095}
