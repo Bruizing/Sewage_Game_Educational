@@ -4,27 +4,43 @@ using UnityEngine;
 //finished
 public class CameraFollowAva : MonoBehaviour
 {
-    public Transform Avalin;
-    public float smoothSpeed = 4f;
-    public Vector3 offset;
+    public Transform avalin;
     public BoxCollider2D cameraZone;
-    public float zoneBuffer = 0.2f;//for jitter remove
+    public float smoothSpeed = 5f;
+    public float zoneBuffer = 0.2f;
+    public Vector3 offset;
 
-    void Update()
+    void LateUpdate()
     {
-        float minX = cameraZone.bounds.min.x;
-        float maxX = cameraZone.bounds.max.x;
-        // start with current camera pos   vv
-        float targetX = transform.position.x;
-        // Only update targetY if Avalin is outside the camera zone bounds
-        if (Avalin.position.x > maxX + zoneBuffer || Avalin.position.x < minX - zoneBuffer)
-        {
-            targetX = Avalin.position.x;
-        }
-        targetX = Mathf.Clamp(targetX, minX, maxX);
+        if (avalin == null || cameraZone == null) return;
 
-        // Keep X position fixed with offset, only update Y position
-        Vector3 targetPosition = new Vector3(targetX + offset.x, transform.position.y, transform.position.z);
-        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * smoothSpeed);
+        Bounds bounds = cameraZone.bounds;
+
+        float targetX = transform.position.x;
+        float targetY = transform.position.y;
+
+        if (avalin.position.x > bounds.max.x + zoneBuffer ||
+            avalin.position.x < bounds.min.x - zoneBuffer)
+        {
+            targetX = avalin.position.x;
+        }
+
+        if (avalin.position.y > bounds.max.y + zoneBuffer ||
+            avalin.position.y < bounds.min.y - zoneBuffer)
+        {
+            targetY = avalin.position.y;
+        }
+
+        Vector3 targetPosition = new Vector3(
+            targetX + offset.x,
+            targetY + offset.y,
+            transform.position.z
+        );
+
+        transform.position = Vector3.Lerp(
+            transform.position,
+            targetPosition,
+            smoothSpeed * Time.deltaTime
+        );
     }
 }
