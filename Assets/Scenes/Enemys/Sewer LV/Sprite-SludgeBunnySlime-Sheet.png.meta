@@ -128,17 +128,38 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 32, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 2e8e321532e9f43c88f7390f1fea9ac4
       internalID: -332202664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite-SludgeBunnySlime-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e767de9e31b26144188eae1b50ac8839
+      internalID: 1652927797
       vertices: []
       indices: 
       edges: []
@@ -155,6 +176,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Sprite-SludgeBunnySlime-Sheet_0: -332202664
+      Sprite-SludgeBunnySlime-Sheet_1: 1652927797
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
