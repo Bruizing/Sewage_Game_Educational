@@ -129,7 +129,7 @@ TextureImporter:
         x: 0
         y: 0
         width: 16
-        height: 10
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,7 +137,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9b14b2233efc4033a8a3e4b570c77ff
+      spriteID: f5d45c21ebce17142b014aaa360bd385
       internalID: 1707724370
       vertices: []
       indices: 
@@ -147,10 +147,10 @@ TextureImporter:
       name: Sprite-UsedDiaper-Sheet_1
       rect:
         serializedVersion: 2
-        x: 17
+        x: 16
         y: 0
-        width: 14
-        height: 11
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,7 +158,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8c88875a71ba4a48814c8db50a6093c
+      spriteID: 549da01d1daf9e64d84c4820d6a5624a
       internalID: 1334334880
       vertices: []
       indices: 

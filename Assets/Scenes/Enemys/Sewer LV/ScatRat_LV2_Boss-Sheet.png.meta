@@ -126,10 +126,10 @@ TextureImporter:
       name: ScatRat_LV2_Boss-Sheet_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 63
-        height: 61
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: ScatRat_LV2_Boss-Sheet_1
       rect:
         serializedVersion: 2
-        x: 65
+        x: 64
         y: 0
-        width: 63
-        height: 61
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: ScatRat_LV2_Boss-Sheet_2
       rect:
         serializedVersion: 2
-        x: 129
+        x: 128
         y: 0
-        width: 63
-        height: 60
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

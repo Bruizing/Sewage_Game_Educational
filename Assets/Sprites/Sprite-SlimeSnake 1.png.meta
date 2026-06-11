@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: deed366dabeb54a309e2ade83accdfa3
+guid: 126955d02ba719e4b9de8259547d9191
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite-SludgeBunnySlime-Sheet_0
+      name: Sprite-SlimeSnake 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e8e321532e9f43c88f7390f1fea9ac4
-      internalID: -332202664
+      spriteID: aca13b10f932a684495f59c04a091332
+      internalID: -654482323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-SludgeBunnySlime-Sheet_1
+      name: Sprite-SlimeSnake 1_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 64
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e767de9e31b26144188eae1b50ac8839
-      internalID: 1652927797
+      spriteID: d6256c82100ce294aa874cca6181414d
+      internalID: 1093825484
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite-SludgeBunnySlime-Sheet_0: -332202664
-      Sprite-SludgeBunnySlime-Sheet_1: 1652927797
+      Sprite-SlimeSnake 1_0: -654482323
+      Sprite-SlimeSnake 1_1: 1093825484
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

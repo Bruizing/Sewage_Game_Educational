@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: deed366dabeb54a309e2ade83accdfa3
+guid: 0448af7af7f47b545ace065b6d729f22
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite-SludgeBunnySlime-Sheet_0
+      name: OverFlowLord_LV3_Boss-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e8e321532e9f43c88f7390f1fea9ac4
-      internalID: -332202664
+      spriteID: 498f951de5324dd43ba10933bb219a5c
+      internalID: -110886634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-SludgeBunnySlime-Sheet_1
+      name: OverFlowLord_LV3_Boss-Sheet_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 64
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e767de9e31b26144188eae1b50ac8839
-      internalID: 1652927797
+      spriteID: fa995ba6a0806934b81faeb92efa9dae
+      internalID: 1852271396
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite-SludgeBunnySlime-Sheet_0: -332202664
-      Sprite-SludgeBunnySlime-Sheet_1: 1652927797
+      OverFlowLord_LV3_Boss-Sheet_0: -110886634
+      OverFlowLord_LV3_Boss-Sheet_1: 1852271396
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
