@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 758cf429fe8784220bedfdfc1b25b00d
+guid: b077b660c04d21040ada4aef043fbf18
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite-ElectricalPole-Sheet_0
+      name: UI_Thumbpad_Buttons_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 21
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a77ba4a5db2cfc4fb379db50e2d1bd1
+      internalID: 676657686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Thumbpad_Buttons_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 64
-        height: 64
+        y: 10
+        width: 10
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7982733e5cd3fb14c87729d308f596e1
-      internalID: 654756434
+      spriteID: d93b235640155d949ba2549b92e1e1f4
+      internalID: 1894598857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-ElectricalPole-Sheet_1
+      name: UI_Thumbpad_Buttons_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 11
         y: 0
-        width: 64
-        height: 64
+        width: 10
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34f966ebe5f040443a4776cef24f6e72
-      internalID: -568860767
+      spriteID: 83d56bb749981e14e827fb8d565155ce
+      internalID: -1784878769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-ElectricalPole-Sheet_2
+      name: UI_Thumbpad_Buttons_3
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
+        x: 22
+        y: 10
+        width: 10
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,29 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d17e43596a0f7a4cbd3e794930ff5a3
-      internalID: 1155592870
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite-ElectricalPole-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 32
-        width: 2
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a4f1925fa099dd449929c927517f3bf
-      internalID: 1655023303
+      spriteID: e4a391b5acccab74b9aaa5d1ab8ca5a6
+      internalID: 129343377
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite-ElectricalPole-Sheet_0: 654756434
-      Sprite-ElectricalPole-Sheet_1: -568860767
-      Sprite-ElectricalPole-Sheet_2: 1155592870
-      Sprite-ElectricalPole-Sheet_3: 1655023303
+      UI_Thumbpad_Buttons_0: 676657686
+      UI_Thumbpad_Buttons_1: 1894598857
+      UI_Thumbpad_Buttons_2: -1784878769
+      UI_Thumbpad_Buttons_3: 129343377
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
