@@ -40,8 +40,9 @@ public Canvas battleCanvas;
 public BattleHud playerHUD;
 public BattleHud enemyHUD;
 
-
-public 
+[Header("Combat Buttons")]
+[SerializeField] private Button attackButton;
+[SerializeField] private Button healButton;
 
     // Start is called before the first frame update
     void Start()
@@ -50,11 +51,21 @@ public
         StartCoroutine(setupBattle());
     }
 
+    void Update()
+    {
+          if(state == TurnState.START)
+            {
+                StartCoroutine(setupBattle());
+            }   
+    }
+
     IEnumerator setupBattle()
     {
         playerUnitPrefab = GameObject.FindGameObjectWithTag("Player").GetComponent<Unit>();
         playerSprite = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
-        
+        InputProvider inputProvider = GameObject.FindGameObjectWithTag("Player").GetComponent<InputProvider>();
+        inputProvider.enabled = false;
+
         enemyUnit.unitName = enemyUnitPrefab.unitName;
         enemyUnit.damage = enemyUnitPrefab.damage;
         enemyUnit.maxHealth = enemyUnitPrefab.maxHealth;
@@ -73,8 +84,9 @@ public
 
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
+        enemyHUD.SetHP(enemyUnit.currentHealth);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         state = TurnState.PLAYERTURN;
         PlayerTurn();
@@ -83,6 +95,8 @@ public
     IEnumerator PlayerAttack()
     {
         bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+        attackButton.interactable = false;
+        healButton.interactable = false;
         enemyHUD.SetHP(enemyUnit.currentHealth);
         dialogueText.text = "You attack the " + enemyUnit.unitName + " for " + playerUnit.damage + " damage!";
 
@@ -129,8 +143,14 @@ public
     {
         if(state == TurnState.WON)
         {
+            InputProvider inputProvider = GameObject.FindGameObjectWithTag("Player").GetComponent<InputProvider>();
+            inputProvider.enabled = true;
             dialogueText.text = "You won the battle!";
+            enemyHUD.healthSlider.value = 1;
             battleCanvas.enabled = false;
+            state = TurnState.START;
+            this.GetComponent<TurnBased_Combat>().enabled = false;
+            StopAllCoroutines();
         }
         else if(state == TurnState.LOST)
         {
@@ -141,6 +161,8 @@ public
     void PlayerTurn()
     {
         dialogueText.text = "Choose an action:";
+        attackButton.interactable = true;
+        healButton.interactable = true;
     }
 
     public void onAttackButton()
@@ -163,6 +185,8 @@ public
     {
         playerUnit.Heal(30);
         playerHUD.SetHP(playerUnit.currentHealth);
+        attackButton.interactable = false;
+        healButton.interactable = false;
         dialogueText.text = "You heal yourself for 30 HP!";
 
         yield return new WaitForSeconds(2f);

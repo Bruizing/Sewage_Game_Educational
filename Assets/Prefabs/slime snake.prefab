@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7246667080222388793}
   - component: {fileID: 7940467725950871185}
   - component: {fileID: -4431693289780979204}
+  - component: {fileID: 2289444450679725639}
+  - component: {fileID: 5642197494803725962}
   m_Layer: 0
   m_Name: slime snake
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863576466401024123}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.25, y: -4.5, z: 3}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
@@ -147,3 +149,35 @@ MonoBehaviour:
   damage: 15
   maxHealth: 60
   currentHealth: 60
+--- !u!114 &2289444450679725639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863576466401024123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65680e31948d5d24e9f4892017711efe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: SlimeSnake
+  damage: 15
+  maxHealth: 55
+  currentHealth: 55
+--- !u!114 &5642197494803725962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863576466401024123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e59fe878c43a89448969b0f348e08b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnBasedCombat: {fileID: 0}
+  _enemyUnit: {fileID: 0}
+  _enemySprite: {fileID: 0}
+  battleCanvas: {fileID: 0}
