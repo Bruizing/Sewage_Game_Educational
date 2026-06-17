@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 9046090150269412447}
   - component: {fileID: 1009367873144479550}
   - component: {fileID: 4218100761195670105}
+  - component: {fileID: 3273879572631706483}
+  - component: {fileID: 5085188051857473446}
   m_Layer: 0
   m_Name: CloggedPipe
   m_TagString: Enemy
@@ -137,7 +139,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -170,3 +172,35 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3273879572631706483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2810129743766727498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65680e31948d5d24e9f4892017711efe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: CloggedPipe
+  damage: 10
+  maxHealth: 30
+  currentHealth: 30
+--- !u!114 &5085188051857473446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2810129743766727498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e59fe878c43a89448969b0f348e08b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnBasedCombat: {fileID: 0}
+  _enemyUnit: {fileID: 0}
+  _enemySprite: {fileID: 0}
+  battleCanvas: {fileID: 0}

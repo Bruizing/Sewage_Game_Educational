@@ -65,6 +65,10 @@ public BattleHud enemyHUD;
         playerSprite = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
         InputProvider inputProvider = GameObject.FindGameObjectWithTag("Player").GetComponent<InputProvider>();
         inputProvider.enabled = false;
+     inputProvider.rb.velocity = Vector2.zero;
+         inputProvider.rb.angularVelocity = 0f;
+         inputProvider.DirX = 0f;
+            
 
         enemyUnit.unitName = enemyUnitPrefab.unitName;
         enemyUnit.damage = enemyUnitPrefab.damage;
@@ -145,6 +149,9 @@ public BattleHud enemyHUD;
         {
             InputProvider inputProvider = GameObject.FindGameObjectWithTag("Player").GetComponent<InputProvider>();
             inputProvider.enabled = true;
+            inputProvider.rb.velocity = Vector2.zero;
+            inputProvider.rb.angularVelocity = 0f;
+            inputProvider.DirX = 0f;
             dialogueText.text = "You won the battle!";
             enemyHUD.healthSlider.value = 1;
             battleCanvas.enabled = false;

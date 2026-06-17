@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2586597181741811597}
   - component: {fileID: 796289823046160390}
   - component: {fileID: 36793461324192711}
+  - component: {fileID: 8307008984060639307}
+  - component: {fileID: 7300991531987150863}
   m_Layer: 0
   m_Name: SludgeBunny
   m_TagString: Enemy
@@ -116,7 +118,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -137,7 +139,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -170,3 +172,35 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8307008984060639307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6835428839302711124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65680e31948d5d24e9f4892017711efe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: SludgeBunny
+  damage: 15
+  maxHealth: 45
+  currentHealth: 45
+--- !u!114 &7300991531987150863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6835428839302711124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e59fe878c43a89448969b0f348e08b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnBasedCombat: {fileID: 0}
+  _enemyUnit: {fileID: 0}
+  _enemySprite: {fileID: 0}
+  battleCanvas: {fileID: 0}

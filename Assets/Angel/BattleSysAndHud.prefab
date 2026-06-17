@@ -158,6 +158,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5686875130696084078}
+    - target: {fileID: 1422964819333371248, guid: 986d6173dd5c9284b8aee086a0c610ee, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 95
+      objectReference: {fileID: 0}
     - target: {fileID: 3624537034414362874, guid: 986d6173dd5c9284b8aee086a0c610ee, type: 3}
       propertyPath: m_Name
       value: BattleHud

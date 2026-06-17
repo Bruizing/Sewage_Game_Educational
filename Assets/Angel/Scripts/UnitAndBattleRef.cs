@@ -6,6 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Unit))]
 public class UnitAndBattleRef : MonoBehaviour
 {
+    private SpriteRenderer Sp;
    public TurnBased_Combat turnBasedCombat;
    [SerializeField] private Unit _enemyUnit;
    [SerializeField] private SpriteRenderer _enemySprite;
@@ -13,6 +14,7 @@ public class UnitAndBattleRef : MonoBehaviour
    private BoxCollider2D _collider;
    void Start()
    {
+       Sp = GetComponent<SpriteRenderer>();
        turnBasedCombat = GameObject.Find("BattleSystem").GetComponent<TurnBased_Combat>();
        _enemyUnit = GetComponent<Unit>();
        _enemySprite = GetComponent<SpriteRenderer>();
@@ -22,6 +24,7 @@ public class UnitAndBattleRef : MonoBehaviour
    private void OnTriggerEnter2D(Collider2D collision){
        if (collision.CompareTag("Player"))
        {
+           Sp.enabled = false;
            turnBasedCombat.enabled = true;
            turnBasedCombat.enemySprite = _enemySprite;
            turnBasedCombat.enemyUnitPrefab = _enemyUnit;

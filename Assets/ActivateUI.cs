@@ -6,20 +6,27 @@ using UnityEngine.UI;
 public class ActivateUI : CollidableObject
 {
     ActionSystem inputActions;
-    [SerializeField] private Canvas UIInfoCanvas;
+    [SerializeField] private GameObject UIInfoCanvas;
     [SerializeField] private Button BackButton;
+
+    private bool on;
+    private bool off;
 
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
+        inputActions = new ActionSystem();
+        inputActions.Enable();
+
+        inputActions.Player.Interact.performed += ctx => {};
 
     }
 
     protected override void OnCollide(GameObject other)
     {
         base.OnCollide(other);
-        if (Input.GetButtonDown("Inter"))
+        if (Input.GetButtonDown("Inter") || inputActions.Player.Interact.triggered)
         {
             Activate();
         }
@@ -27,13 +34,23 @@ public class ActivateUI : CollidableObject
 
     void Activate()
     {
-        UIInfoCanvas.enabled = true;
+        on = true;
+        off = false;
+        UIInfoCanvas.SetActive(on);
+        BackButton.enabled = true;
     }
 
     public void Deactivate()
     {
+        off = true;
+        on = false;
         BackButton.enabled = false;
-        UIInfoCanvas.enabled = false;
+        UIInfoCanvas.SetActive(false);
+    }
+     
+    private void OnDisable()
+    {
+        inputActions.Disable();
     }
 
 

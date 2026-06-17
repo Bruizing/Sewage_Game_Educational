@@ -8,8 +8,7 @@ using UnityEngine.InputSystem;
 public class InputProvider : MonoBehaviour
 {
     ActionSystem inputActions;
-
-    private float DirX = 0f;
+    public float DirX = 0f;
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
 
@@ -17,7 +16,7 @@ public class InputProvider : MonoBehaviour
     [SerializeField] private float YVel;
 
     [Header("Player Components References")]
-    [SerializeField] private Rigidbody2D rb;
+     public Rigidbody2D rb;
     [SerializeField] private Animator anim;
 
     [Header("Ground Check")]
@@ -28,7 +27,6 @@ public class InputProvider : MonoBehaviour
     {
         inputActions = new ActionSystem();
         inputActions.Enable();
-
         inputActions.Player.Movement.performed += ctx =>
         {
             DirX = ctx.ReadValue<float>();
