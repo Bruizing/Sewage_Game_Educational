@@ -32,8 +32,6 @@ public Unit enemyUnit;
 public Unit playerUnitPrefab;
 public Unit enemyUnitPrefab;
 
-[SerializeField] private int ultimateCharge;
-
 [Header("UI Elements")]
 public TextMeshProUGUI dialogueText;
 
@@ -42,13 +40,9 @@ public Canvas battleCanvas;
 public BattleHud playerHUD;
 public BattleHud enemyHUD;
 
-public GameObject GameoverScreen;
-
 [Header("Combat Buttons")]
 [SerializeField] private Button attackButton;
 [SerializeField] private Button healButton;
-[SerializeField] private Button UltimateButton;
-[SerializeField] GameObject ButtonsUi;
 
     // Start is called before the first frame update
     void Start()
@@ -64,8 +58,7 @@ public GameObject GameoverScreen;
                 StartCoroutine(setupBattle());
             }   
     }
-    
-    #region BattleStates
+
     IEnumerator setupBattle()
     {
         playerUnitPrefab = GameObject.FindGameObjectWithTag("Player").GetComponent<Unit>();
@@ -103,7 +96,54 @@ public GameObject GameoverScreen;
         PlayerTurn();
     }
 
-        void EndBattle()
+    IEnumerator PlayerAttack()
+    {
+        bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+        attackButton.interactable = false;
+        healButton.interactable = false;
+        enemyHUD.SetHP(enemyUnit.currentHealth);
+        dialogueText.text = "You attack the " + enemyUnit.unitName + " for " + playerUnit.damage + " damage!";
+
+        yield return new WaitForSeconds(2f);
+
+        if(isDead)
+        {
+              state = TurnState.WON;
+              dialogueText.text = "You defeated the " + enemyUnit.unitName + "!";  
+              EndBattle();  
+        }
+        else
+        {
+            state = TurnState.ENEMYTURN;
+            StartCoroutine(EnemyTurn());
+        }
+    }
+
+    IEnumerator EnemyTurn()
+    {
+        dialogueText.text = "The " + enemyUnit.unitName + " attacks!";
+        yield return new WaitForSeconds(1f);
+
+        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+        playerHUD.SetHP(playerUnit.currentHealth);
+        dialogueText.text = "The " + enemyUnit.unitName + " attacks you for " + enemyUnit.damage + " damage!";
+
+        yield return new WaitForSeconds(2f);
+
+        if(isDead)
+        {
+              state = TurnState.LOST;
+              dialogueText.text = "You were defeated by the " + enemyUnit.unitName + "...";  
+              EndBattle();  
+        }
+        else
+        {
+            state = TurnState.PLAYERTURN;
+            PlayerTurn();
+        }
+    }
+
+    void EndBattle()
     {
         if(state == TurnState.WON)
         {
@@ -124,125 +164,14 @@ public GameObject GameoverScreen;
             dialogueText.text = "You were defeated...";
         }
     }
-    #endregion
-    
-    #region Player
-
-    IEnumerator UltamineAttack()
-    {
-        int randomMultiplers = Random.Range(2,4);
-        bool isDead = enemyUnit.TakeDamage(playerUnit.damage * randomMultiplers);
-        attackButton.interactable = false;
-        healButton.interactable = false;
-        enemyHUD.SetHP(enemyUnit.currentHealth);
-        dialogueText.text = "Unleashing ultimate, did " + (playerUnit.damage * randomMultiplers) + " damage";
-        ultimateCharge = 0;
-
-        yield return new WaitForSeconds(2f);
-
-        if(isDead)
-        {
-              state = TurnState.WON;
-              dialogueText.text = "You defeated the " + enemyUnit.unitName + "!";  
-              EndBattle();  
-        }
-        else
-        {
-            state = TurnState.ENEMYTURN;
-            StartCoroutine(EnemyTurn());
-        }
-    }
-    IEnumerator PlayerHeal()
-    {
-        playerUnit.Heal(30);
-        playerHUD.SetHP(playerUnit.currentHealth);
-        attackButton.interactable = false;
-        healButton.interactable = false;
-        dialogueText.text = "You heal yourself for 30 HP!";
-
-        yield return new WaitForSeconds(2f);
-        
-        ultimateCharge++;
-        state = TurnState.ENEMYTURN;
-        StartCoroutine(EnemyTurn());
-    }
-
-    IEnumerator PlayerAttack()
-    {
-        bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
-        attackButton.interactable = false;
-        healButton.interactable = false;
-        enemyHUD.SetHP(enemyUnit.currentHealth);
-        dialogueText.text = "You attack the " + enemyUnit.unitName + " for " + playerUnit.damage + " damage!";
-        ultimateCharge++;
-
-        yield return new WaitForSeconds(2f);
-
-        if(isDead)
-        {
-              state = TurnState.WON;
-              dialogueText.text = "You defeated the " + enemyUnit.unitName + "!";  
-              EndBattle();  
-        }
-        else
-        {
-            state = TurnState.ENEMYTURN;
-            StartCoroutine(EnemyTurn());
-        }
-    }
 
     void PlayerTurn()
     {
         dialogueText.text = "Choose an action:";
         attackButton.interactable = true;
         healButton.interactable = true;
-        if(ultimateCharge >= 3)
-        {
-            UltimateButton.interactable = true;
-        }
-        else
-        {
-            UltimateButton.interactable = false;
-        }
-
-
     }
 
-    #endregion
-
-    #region Enemy
-    IEnumerator EnemyTurn()
-    {
-        dialogueText.text = "The " + enemyUnit.unitName + " attacks!";
-        yield return new WaitForSeconds(1f);
-
-        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
-        playerHUD.SetHP(playerUnit.currentHealth);
-        dialogueText.text = "The " + enemyUnit.unitName + " attacks you for " + enemyUnit.damage + " damage!";
-
-        yield return new WaitForSeconds(2f);
-
-        if(isDead)
-        {
-              state = TurnState.LOST;
-              dialogueText.text = "You were defeated by the " + enemyUnit.unitName + "...";  
-              EndBattle();
-              battleCanvas.enabled = false;
-              GameoverScreen.SetActive(true);
-              ButtonsUi.SetActive(false);
-              attackButton.interactable = false;
-              UltimateButton.interactable = false;
-              healButton.interactable = false;
-        }
-        else
-        {
-            state = TurnState.PLAYERTURN;
-            PlayerTurn();
-        }
-    }
-    #endregion
-
-    #region Buttons
     public void onAttackButton()
     {
         if (state != TurnState.PLAYERTURN)
@@ -259,14 +188,17 @@ public GameObject GameoverScreen;
         StartCoroutine(PlayerHeal());
     }
 
-    public void OnUltimateButton()
+    IEnumerator PlayerHeal()
     {
-        if(state != TurnState.PLAYERTURN)
-             return;
-        StartCoroutine(UltamineAttack());
-        
+        playerUnit.Heal(30);
+        playerHUD.SetHP(playerUnit.currentHealth);
+        attackButton.interactable = false;
+        healButton.interactable = false;
+        dialogueText.text = "You heal yourself for 30 HP!";
 
+        yield return new WaitForSeconds(2f);
+
+        state = TurnState.ENEMYTURN;
+        StartCoroutine(EnemyTurn());
     }
-    #endregion
-
 }
