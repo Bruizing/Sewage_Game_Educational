@@ -18,11 +18,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6766471231355433816, guid: 2e7dea860c1536b45a38b5960e85197f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.75
+      value: 99.85634
       objectReference: {fileID: 0}
     - target: {fileID: 6766471231355433816, guid: 2e7dea860c1536b45a38b5960e85197f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: -2.9960394
       objectReference: {fileID: 0}
     - target: {fileID: 6766471231355433816, guid: 2e7dea860c1536b45a38b5960e85197f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -60,7 +60,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4431693289780979204, guid: 2e7dea860c1536b45a38b5960e85197f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -112,7 +113,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

@@ -59,12 +59,11 @@ public class InputProvider : MonoBehaviour
         #endregion
 
         #region YDir Animation Parameters
-        if(YFloat > 0f )
+        if(!isGrounded())
         {
-            int Yint = Mathf.RoundToInt(YFloat);
-            anim.SetInteger("YDir", Yint);
+            anim.SetInteger("YDir", 1);
         }
-        else if(YFloat == (jumpForce * 2f) - jumpForce)
+        else if(isGrounded())
         {
             anim.SetInteger("YDir", 0);
         }
