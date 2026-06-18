@@ -7582,6 +7582,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1063366895787104230, guid: 8c69e98acbbaa6d489b6d796706e9ac1, type: 3}
+      propertyPath: battleCanvas
+      value: 
+      objectReference: {fileID: 962196301}
     - target: {fileID: 2119963458501089844, guid: 8c69e98acbbaa6d489b6d796706e9ac1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 99.85634

@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e38998faef1ac458d7407218bc5b14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DirX: 0
   speed: 300
   jumpForce: 10
   XVel: 0
@@ -353,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65680e31948d5d24e9f4892017711efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Orion
+  unitName: SewageWorker
   damage: 10
   maxHealth: 50
   currentHealth: 50
