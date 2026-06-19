@@ -7953,6 +7953,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sign
       objectReference: {fileID: 0}
+    - target: {fileID: 8572897766294013587, guid: e4e90cd6ffce1f24d9826fee2e120b35, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 145023194}
     - target: {fileID: 9019755984062651466, guid: e4e90cd6ffce1f24d9826fee2e120b35, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

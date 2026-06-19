@@ -1827,6 +1827,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sign
       objectReference: {fileID: 0}
+    - target: {fileID: 8572897766294013587, guid: e4e90cd6ffce1f24d9826fee2e120b35, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1324225551}
     - target: {fileID: 8670619474057806028, guid: e4e90cd6ffce1f24d9826fee2e120b35, type: 3}
       propertyPath: m_text
       value: 
@@ -2937,6 +2941,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1282417a4fc6efc47806c41a752590d2, type: 3}
+--- !u!20 &1324225551 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4376212125644023604, guid: 1282417a4fc6efc47806c41a752590d2, type: 3}
+  m_PrefabInstance: {fileID: 1324225550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1354876284
 GameObject:
   m_ObjectHideFlags: 0

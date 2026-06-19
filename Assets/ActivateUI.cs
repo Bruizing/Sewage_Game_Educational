@@ -9,6 +9,8 @@ public class ActivateUI : CollidableObject
     [SerializeField] private GameObject UIInfoCanvas;
     [SerializeField] private Button BackButton;
 
+    [SerializeField] private GameObject PopUp;
+
     private bool on;
     private bool off;
 
@@ -29,6 +31,26 @@ public class ActivateUI : CollidableObject
         if (Input.GetButtonDown("Inter") || inputActions.Player.Interact.triggered)
         {
             Activate();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            PopUp.SetActive(true);
+        }
+    }
+
+    void OTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            PopUp.SetActive(true);
+            if(UIInfoCanvas.activeInHierarchy == true)
+            {
+                UIInfoCanvas.SetActive(false);
+            }
         }
     }
 
