@@ -165,6 +165,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.DefaultCompany.SewageGame
     Standalone: com.DefaultCompany.SewageGame
   buildNumber:
     Standalone: 0
